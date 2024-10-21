@@ -7,7 +7,7 @@ def readme():
         return f.read()
 
 setup(name='autofis',
-      version = '0.1',
+      version = '0.1.1',
       description = 'Automatic Synthesis of Fuzzy Inference Systems Toolkit',
       long_description = readme(),
       url = 'https://github.com/lucasthim/auto-fuzzy',
@@ -22,7 +22,7 @@ setup(name='autofis',
       install_requires = [
           'pandas',
           'numpy',
-          'sklearn',
+          'scikit-learn',
           'scipy'
       ],
       zip_safe=False)
