@@ -96,7 +96,7 @@ class Formulation:
         """
 
         attributes_num_list = range(0,len(self.antecedents_by_attribute))
-        attributes_negation_mask =  np.invert(attribute_is_binary) if self.negation_enabled else len(self.antecedents_by_attribute) * [False]
+        attributes_negation_mask =  np.invert(self.attribute_is_binary) if self.negation_enabled else len(self.antecedents_by_attribute) * [False]
         # Filter area
         aux = support_basic_premises(attributes_num_list, self.antecedents_by_attribute, self.num_of_antecedents_by_attribute, self.ux,
                                        self.criteria_support, self.threshold_support, attributes_negation_mask)
