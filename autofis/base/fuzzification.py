@@ -43,7 +43,8 @@ class Fuzzification(BaseEstimator,TransformerMixin):
         fuzzy_params.loc[is_categorical,'categories'] = categories
 
         fuzzy_params['is_binary'] = False
-        fuzzy_params.loc[is_categorical,'is_binary'] = [x.shape[0] <= 2 for x in categories] if categories is not None else False
+        # fuzzy_params.loc[is_categorical,'is_binary'] = [x.shape[0] <= 2 for x in categories] if categories is not None else False
+        fuzzy_params.loc[is_categorical, 'is_binary'] = [bool(x.shape[0] <= 2) for x in categories] if categories is not None else False
         fuzzy_params['is_categorical'] = is_categorical
 
         self.fuzzy_params = fuzzy_params
